@@ -1,1 +1,1 @@
-# Python-Simplex_Solver
+# Python Simplex Solver
