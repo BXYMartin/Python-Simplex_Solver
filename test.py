@@ -4,18 +4,18 @@ from simplex import *
 
 class SimplexSolverTestCase(unittest.TestCase):
     def test_exam(self):
-        objective = ('minimize', '- 3x_1 - 2x_2')
-        constraints = ['2x_1 + 1x_2 <= 18', '2x_1 + 3x_2 <= 42',
-                       '3x_1 + 1x_2 <= 24']
-        LP1 = Simplex(num_vars=3, constraints=constraints, objective_function=objective)
+        objective = ('minimize', '1x_3 - 1x_4')
+        constraints = ['2x_1 - 1x_2 - 1x_3 + 1x_4 <= 0', '- 3x_1 + 2x_2 - 1x_3 + 1x_4 <= 0',
+                       '3x_1 + 1x_2 >= 5']
+        LP1 = Simplex(num_vars=4, constraints=constraints, objective_function=objective, vars_non_negative=True)
         print(LP1.solution)
         print(LP1.optimize_val)
 
     def test_exam_more(self):
-        objective = ('minimize', '- 3x_1 - 2x_2')
-        constraints = ['2x_1 + 1x_2 <= 18', '2x_1 + 3x_2 <= 42',
-                       '3x_1 + 1x_2 <= 24']
-        LP1 = Simplex(num_vars=3, constraints=constraints, objective_function=objective)
+        objective = ('minimize', '- 20x_1 - 15x_2')
+        constraints = ['4x_1 + 2x_2 <= 25', '2x_1 - 1x_2 <= 0',
+                       '1x_2 <= 8', '1x_1 >= 3']
+        LP1 = Simplex(num_vars=2, constraints=constraints, objective_function=objective)
         print(LP1.solution)
         print(LP1.optimize_val)
 
